@@ -5,7 +5,7 @@ const PORT:number= 3001;
 require("./model/index")
 
 app.get("/",(req:Request,res:Response)=>{
-    res.send("Hello world");
+    res.send("Hello w orld");
 });
 app.get("/about",(req:Request,res:Response)=>{
       res.send("About page");
