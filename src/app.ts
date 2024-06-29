@@ -10,7 +10,13 @@ dotenv.config()
 import './database/connection'
 
 import userRoute from './Routes/userRoute'
+import adminseeder from './adminseeder'
 app.use(express.json())
+
+
+//admin seeder 
+adminseeder()
+
 app.use ("", userRoute)
 app.listen(PORT,()=>{ 
     console.log("Server has started at port",PORT);
