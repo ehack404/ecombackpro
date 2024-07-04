@@ -5,7 +5,7 @@ import User from "../database/models/userModel";
 
 
 
-interface AuthRequest extends Request{
+export interface AuthRequest extends Request{
     user?:{
         username : string,
         email : string,
@@ -16,7 +16,7 @@ interface AuthRequest extends Request{
 }
 
 
-enum Role{
+export enum Role{
     Admin= "admin",
     Customer = "customer"
 }
@@ -68,6 +68,7 @@ class AuthMidlleware{
 
     return(req:AuthRequest,res:Response,next:NextFunction)=>{
         let userRole = req.user?.role as Role
+        console.log(userRole)
         if(!roles.includes(userRole)){
             res.status(403).json({
                 message : " You dont have permussuine"
